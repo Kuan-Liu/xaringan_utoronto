@@ -1,0 +1,284 @@
+/***********
+ 1. Slide margins and spacings
+ 2. Default background colour white and text colour UT pantone@655 blue
+ 3. font-size and style
+ ***********/
+ 
+.remark-slide-content {
+  padding-top: 32px;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 32px;
+  background-color: white;
+  color: #002A5C; /*UT blue*/
+  font-size: 20pt;  /*smallest try 18pt, largest try 26pt*/
+}
+
+
+/* 
+Specify Headers - four levels
+*/
+
+.remark-slide-content > h1:first-of-type {
+  color: #002A5C;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.remark-slide-content > h2:first-of-type {
+  color: #002A5C;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.remark-slide-content > h3:first-of-type {
+  color: #008BB0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.remark-slide-content > h4:first-of-type {
+  color: #008BB0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Change default inverse background colour to UT blue */
+.inverse {
+  background-color: #002A5C;
+  color: white;
+  text-align:center;
+  vertical-align: middle;
+}
+.inverse .remark-slide-number {
+  display: none; /*not to display page number*/
+}
+
+
+/* Define background colour classes, using UT secondary colours
+this is meant to be used for (section) title page*/
+
+.ut-pantone_yellow {
+  background-color: #FFE498;
+  background-image: url(UT-Logo.svg);
+  background-size: 320px;
+  background-position: 95% 100%;
+  color: black;
+  text-align:center;
+  vertical-align: middle;
+}
+.ut-pantone_yellow .remark-slide-number {
+  display: none;
+}
+.ut-pantone_red {
+  background-color: #E31837;
+  background-image: url(UT-Logo.svg);
+  background-size: 320px;
+  background-position: 95% 100%;
+  color: white;
+  text-align:center;
+  vertical-align: middle;
+}
+.ut-pantone_red .remark-slide-number {
+  display: none;
+}
+.ut-pantone_babyblue {
+  background-color: #008BB0;
+  background-image: url(UT-Logo.svg);
+  background-size: 320px;
+  background-position: 95% 100%;
+  color: black;
+  text-align:center;
+  vertical-align: middle;
+}
+.ut-pantone_babyblue .remark-slide-number {
+  display: none;
+}
+
+ 
+ /* inline code background */
+ .remark-inline-code {
+   /* until the link between code and mathjax 
+   is broken, we need to use transparent */
+  background: transparent; 
+  border-radius: 3px;
+  padding: 2px;
+}
+
+
+
+/******************
+ * Coloured content boxes
+ * using UT accent colours
+ ****************/
+.content-box { 
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+.content-box-a1,
+.content-box-a2,
+.content-box-a3,
+.content-box-a4{
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 5px 20px 5px 20px;
+  width: 100%;
+}
+.content-box-a1 { background-color: #7BA4D9; }
+.content-box-a2 { background-color: #CECFCB; }
+.content-box-a3 {	background-color: #EACACD; }
+.content-box-a4 { background-color: #DAE5CD; }
+.content-box-a1 .remark-inline-code,
+.content-box-a2 .remark-inline-code,
+.content-box-a3 .remark-inline-code,
+.content-box-a4 .remark-inline-code { 
+  background: none;
+}
+
+.full-width {
+    display: flex;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+/* Slide scrolling*/
+.scroll-box-8 {
+  height:8em;
+  overflow-y: scroll;
+}
+.scroll-box-10 {
+  height:10em;
+  overflow-y: scroll;
+}
+.scroll-box-12 {
+  height:12em;
+  overflow-y: scroll;
+}
+.scroll-box-14 {
+  height:14em;
+  overflow-y: scroll;
+}
+.scroll-box-16 {
+  height:16em;
+  overflow-y: scroll;
+}
+.scroll-box-18 {
+  height:18em;
+  overflow-y: scroll;
+}
+.scroll-box-20 {
+  height:20em;
+  overflow-y: scroll;
+}
+.scroll-output {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+
+
+/*setting title slide */
+
+.title-slide {
+  background-image: url(UT-Logo.svg);
+  background-size: 320px;
+  background-position: 95% 100%;
+  background-color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: none;
+}
+
+
+/* H1 fonts  */
+.title-slide h1 {
+  color: #002A5C;
+  font-weight: normal;
+  font-size: 45px;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 18px;
+}
+
+/* H2 fonts */
+.title-slide h2 {
+  color: #002A5C;
+  font-size: 35px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* H3 fonts */
+.title-slide h3 {
+  color: #002A5C;
+  font-size: 28px;
+  font-weight: normal;
+  padding-left: 20px;
+  margin: 0px;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Remove slide count */
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+/* UT blockquote */
+blockquote, .blockquote {
+  display: block;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: solid 10px #00204E;
+  border-top: solid 2px #00204E;
+  border-bottom: solid 2px #00204E;
+  border-right: solid 2px #00204E;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  /* background-color; */
+  color: #002A5C;
+  padding: 0.5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.blockquote p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.blockquote > h1:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.blockquote > h2:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.blockquote > h3:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.blockquote > h4:first-of-type {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+
+/* if wanted to change mathjax formatting
+.remark-inline-code .mjx-chtml {
+  color: blue;
+}
+*/
+
+
+
+
+/* References: many customisations adapted from the examples here:
+https://github.com/yihui/xaringan/tree/master/inst/rmarkdown/templates/xaringan/resources
+*/
+

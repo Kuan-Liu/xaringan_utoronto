@@ -1,0 +1,740 @@
+---
+title: "An Introduction to Xaringan"
+subtitle: "University of Toronto Theme & Template"
+author: "<br>Kuan Liu, PhD(c)<br> Dalla Lana School of Public Health<br> University of Toronto"
+date: "<br>May 7, 2021"
+start: "0:0:0"
+output:
+  xaringan::moon_reader:
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    css: ["default", "assets/utoronto_fonts.css", "assets/utoronto.css"]
+    seal: true #disble to create your own title slide
+    self_contained: false # if true, fonts will be stored locally
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      navigation:
+        scroll: true # false if wish to disable scrolling by mouth and use keyboard only
+---
+
+
+class: ut-pantone_babyblue
+
+# **Some Background**
+<!-- # **.white[white colour font if you prefer]** -->
+
+
+
+---
+
+## What is Xarigan?
+
+.pull-left[
+- **Xaringan** is a R package created by [Yihui Xie](https://github.com/yihui/xaringan) to generate presentation slides in R with Rmarkdown.
+- Just like Rmarkdown, you can type latex and display R code and output in your slides
+  + It enables the use of .red[interactive plots] and .red[html widgets], 
+    + i.e., plotly, shiny apps and maps with leaflet
+- You can also code in html and css! 
+  + Simple embedding of online audio, videos, Google map etc
+  + modify the theme and style of your slides
+]
+
+.pull-right[
+- **Xaringan** was derived from Sharingan, a dōjutsu (eye technique) in the Japanese anime Naruto 
+  + that can .blue[hypnotize] and show .blue[insights] of your "enemies" (audience) `r emo::ji("wow")`
+  
+  ![](http://24.media.tumblr.com/tumblr_lnvt0vSbrw1qjqz6co1_500.gif)
+
+
+]
+
+---
+
+class: ut-pantone_red
+
+# .white[**Showcase Cool Stuffs**]
+
+---
+
+## Embeding Google Map
+
+> Instruction: go to google map, search for location, select share and click on **Embed a map** and copy the iframe code
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.468727620375!2d-79.39483388413716!3d43.6592205791212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34c78d6c73e5%3A0x95936ca377bfc3e9!2sThe%20Dalla%20Lana%20School%20of%20Public%20Health!5e0!3m2!1sen!2sca!4v1620399822627!5m2!1sen!2sca" width= 100% height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+
+---
+
+## Embeding Online Videos
+
+.pull-left[
+
+### From online MP4 files
+
+<!-- You can change controls to autoplay to adds video controls, like play, pause, and volume. -->
+
+<video width="560" height="315" controls>
+  <source src="https://insulin100.utoronto.ca/wp-content/uploads/2020/11/banting_film-loop-lab-620x420-02.mp4" type="video/mp4">
+</video>
+
+]
+
+.pull-right[
+
+### From Youtube
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SYd-jjrUvug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+]
+
+---
+
+## Embeding Dashboard Apps (yes shinyapps!)
+
+<iframe src="https://art-bd.shinyapps.io/covid19canada/" style="width: 100%; height: 500px; border-style:none"></iframe>
+
+---
+
+
+class: ut-pantone_yellow
+
+# **Getting started!**
+
+---
+
+## Installing `r icons::ionicons("download-outline")`
+
+- Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+devtools::install_github("yihui/xaringan")
+```
+
+.pull-left[
+- You will also need two other CSS files for the custom University of Toronto styling:
+  - `utoronto-fonts.css`
+  - `utoronto.css`
+]
+
+.pull-right[
+- If you want the University Logo to show up on the title slide, you'll also need
+  - `UT-Logo.svg`
+]
+
+- These are available in the assets folder of the GitHub repository [`r icons::ionicons("logo-github")` `Kuan-Liu/xaringan_utoronto`](https://github.com/Kuan-Liu/xaringan_utoronto/assets)
+
+- You can download or fork the entire repo to start coding your own presentation! `r emo::ji("cheers")`
+
+---
+
+## RStudio Infinite Moon Reader - Auto Render to html
+
+```{r eval=FALSE, tidy=FALSE}
+xaringan::inf_mr() #auto render whenever you save your .rmd file;
+```
+
+- More information see, https://yihui.org/en/2019/02/ultimate-inf-mr/
+
+- Presentation slides allow interactive nevigation features
+  - Try typing .red[**h**] or .red[**?**] - this will show you a list of presentation shortcuts 
+
+---
+
+## Create a new slide
+
+- Delimit slides **using three hyphens (`---`)**, eg:
+
+
+```md
+
+---
+
+# This is the title of the slide
+
+The body of the slide is in **markdown**. You can use markdown for:
+
+## Subheadings (eg this h2)
+
+### Subsubheadings (eg this h3)
+
+#### Subsubsubheading (eg this h4)
+
+```
+
+***
+
+For more information on markdown see [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) or this tutorial or [Literate Programming in R](https://annakrystalli.me/literate-programming/)
+
+
+---
+
+## Title of the slide
+
+The body of the slide is in **markdown**. You can use markdown for:
+
+## Subheadings (eg this h2)
+
+### Subsubheadings (eg this h3)
+
+#### Subsubsubheading (eg this h4)
+
+You can use it for lists:
+- _list item_
+- _another list item_
+
+And of course [hyperlink (to my personal website)](https://http://www.kuan-liu.com/)
+
+---
+
+## Background images
+
+**Background images can be set via the `background-image` property**.
+
+The image can be either a local file or an online image. 
+The **path should be put inside `url()`**, which is the CSS syntax. 
+You can also **set the background image size and position**, e.g.,
+
+```yaml
+---
+background-image: url("https://arthistory.utoronto.ca/sites/arthistory.utoronto.ca/files/styles/slider_large_img/public/front_carousel/HH01.jpg?itok=ukdDyPF0")
+background-position: center
+background-size: contain
+---
+```
+
+---
+
+background-image: url("https://arthistory.utoronto.ca/sites/arthistory.utoronto.ca/files/styles/slider_large_img/public/front_carousel/HH01.jpg?itok=ukdDyPF0")
+background-position: center
+background-size: contain
+
+---
+## Two-column layout
+
+`.pull-left[ ]` and `.pull-right[ ]` provide a two-column layout, and the two columns are of the same width.
+
+```markdown
+
+.pull-left[
+- something something.
+- something something something something.
+]
+
+.pull-right[
+![xaringan hex](https://images.squarespace-cdn.com/content/v1/550e564be4b04f84a0e28a9f/1543351559211-VXSN8XG8C0PESUKBFTRH/ke17ZwdGBToddI8pDm48kA_SSaoz4elkj-HsZd8gX3Z7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UWPwZyNcweDIvdeL5kotwkIXjs9g0WibSO_cU-Ijy4Pwg6poS-6WGGnXqDacZer4yQ/2017210-university-toronto.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.jpg?format=2500w)
+]
+```
+---
+## Two-column layout looks like this
+
+.pull-left[
+- something something.
+- something something something something.
+]
+
+.pull-right[
+![xaringan hex](https://images.squarespace-cdn.com/content/v1/550e564be4b04f84a0e28a9f/1543351559211-VXSN8XG8C0PESUKBFTRH/ke17ZwdGBToddI8pDm48kA_SSaoz4elkj-HsZd8gX3Z7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UWPwZyNcweDIvdeL5kotwkIXjs9g0WibSO_cU-Ijy4Pwg6poS-6WGGnXqDacZer4yQ/2017210-university-toronto.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.jpg?format=2500w)
+]
+
+---
+
+# Incremental slide content
+
+The easiest way to **define incremental splits is by using `--`**
+
+--
+
+```md
+
+- Incremental point 1
+
+--
+
+- Incremental point 2
+
+```
+
+*** 
+
+--
+
+- Incremental point 1
+
+--
+
+- Incremental point 2
+
+
+--
+
+***
+
+For more options see [this presentation](https://slides.yihui.name/xaringan/incremental.html).
+
+---
+class: center, middle
+
+# Fancy Incremental with Text
+
+It is also possible to change the .blue[color] of any text by using `.color[text here]`
+
+--
+
+For example `.grey[grey]` will make text .grey[grey].
+
+--
+
+We can do this with .black[black], .red[red], .blue[blue], .green[green], .yellow[yellow], .orange[orange], .purple[purple], .grey[grey].
+
+--
+
+To make text stand out we can use standard markdown `**text**` like **this** 
+or `.bold[this]` .bold[this].  Or italics using `_italic_` _italic_.
+
+You can string together these formats, e.g. `.blue[.bold[...]]` 
+to get .blue[.bold[blue and bold text]].
+
+--
+
+.left[.footnote[
+```
+The text on this slide is centered and in the middle of the slide because the slide began with: 
+
+class: centre, middle
+```
+]]
+
+
+---
+
+## Math Expressions
+
+- You can write LaTeX math expressions inside dollar signs
+  - use the display style with double dollar signs
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+.small[$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+.footnotesize[$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$]
+
+- For inline math you can use single dollar signs
+  - for example, `\bar{X}` gives us $\bar{X}$
+
+---
+
+## Equation and Align
+
+- For multi-line equations you can use <span>`\`</span>`begin{align} ...  `</span>`\`</span>`end{align}`
+\begin{align}
+\bar{X} & = X_1 + X_2 + \ldots + X_n \nonumber \\
+ & = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
+\end{align}
+- Reference equations using <span>`\`</span>`eqref{label}`, \eqref{good-eq}, or <span>`\`</span>`ref{label}`, \ref{good-eq}.
+
+- Make sure to include **mathjax-equation-numbers.html** in the top setting
+
+```
+output:
+  xaringan::moon_reader:
+    includes:
+*      in_header: "assets/mathjax-equation-numbers.html"
+```
+
+---
+class: ut-pantone_lime
+
+# **Working with R**
+
+---
+
+## R code and highlighting 
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+    `r ''````{r tidy=FALSE, message=FALSE}
+    if (TRUE) {
+    *{{ message("Very important!") }}
+    }
+    ```
+Output:
+```{r tidy=FALSE, message=FALSE}
+if (TRUE) {
+{{ message("Very important!") }}
+}
+```
+
+It is valid R code so you can run it.
+]
+
+---
+
+## R output
+
+- Print the results of statistical tests
+```{r comment='#', echo=FALSE}
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+```
+
+- Use pre-defined `.scroll-output[]` class to enable scrolling R output
+.scroll-box-8[
+```{r}
+step(lm(Fertility~.,data = swiss))
+```
+]
+
+
+---
+
+## Plot output 
+
+```{r, fig.height=4.5, fig.width=12, fig.retina=2, fig.align='center', message=FALSE, warning=FALSE}
+library("tidyverse")
+cars %>% ggplot(aes(x = dist, y = speed)) + 
+  geom_point() + 
+{{ geom_smooth(method = 'lm', # highlighted using {{...}}
+             formula = y ~ poly(x, 2))}} + 
+  theme_bw(base_size = 24) + 
+  labs(y = "Speed (mph)", x = "Stopping distance (ft)")
+```
+
+---
+
+# R Table with kable
+
+```{r, eval = FALSE, message=FALSE}
+knitr::kable(iris[1:10, 1:5], format = "html")
+```
+
+.small[
+```{r, echo = FALSE, message=FALSE}
+colnames(iris) = gsub(pattern = "\\.",
+                      replacement = " ", 
+                      colnames(iris))
+knitr::kable(iris[1:10, 1:5], format = "html")
+```
+]
+
+
+---
+# Leaflet maps
+
+```{r out.width='100%', fig.height=5.5, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=43.66, lng=-79.39, popup="University of Toronto")
+```
+
+---
+# Interactive data tables
+
+.small[
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(gapminder::gapminder, 9),
+  fillContainer = FALSE, options = list(pageLength = 6)
+)
+```
+]
+
+---
+
+## Interactive R plots
+
+```{r, message=FALSE, warning=FALSE, fig.height=5}
+p <- ggplot(gapminder::gapminder, aes(gdpPercap, lifeExp, color = continent)) +
+  geom_point(alpha = 0.5) + geom_smooth() + scale_x_log10() + theme_bw()
+plotly::ggplotly(p)
+```
+
+---
+class: title-slide
+
+# **Supporting slides**
+
+---
+
+class: ut-pantone_babyblue
+
+## Title for ut-pantone_babyblue class
+### .white[Subtitle for ut-pantone_babyblue class]
+
+body text here
+
+.footnote[
+
+```
+class: ut-pantone_babyblue
+```
+
+]
+
+---
+class: ut-pantone_red
+
+## .white[Title for ut-pantone-red class]
+### .white[Subtitle for ut-pantone_red class]
+
+body text here
+
+we have to use .white[my headers] to set the header colour to white with this background
+
+.footnote[
+
+```
+class: ut-pantone_red
+```
+
+]
+
+---
+class: ut-pantone_yellow
+
+## Title for ut-pantone_yellow class
+### Subtitle for ut-pantone_yellow class
+
+body text here
+
+.footnote[
+
+```
+class: ut-pantone_yellow
+```
+
+]
+
+---
+
+class: ut-pantone_lime
+
+## Title for ut-pantone_lime class
+### Subtitle for ut-pantone_lime class
+
+body text here
+
+.footnote[
+
+```
+class: ut-pantone_lime
+```
+
+]
+
+---
+
+class: ut-pantone_pink
+
+## Title for ut-pantone_pink class
+### Subtitle for ut-pantone_pink class
+
+body text here
+
+.footnote[
+
+```
+class: ut-pantone_pink
+```
+
+]
+
+---
+
+## Font sizes
+
+
+.pull-left[
+- .font90[.font90]
+- .font100[normal size .font100]
+- .font110[.font110]
+- .font120[.font120]
+- .font130[.font130]
+- .font140[.font140]
+- .font150[.font150]
+
+]
+
+.pull-right[
+
+- .code90[`.code90[]`]
+- .code100[`normal size .code100[]`]
+- .code110[`.code110[]`]
+- .code120[`.code120[]`]
+- .code130[`.code130[]`]
+- .code140[`.code140[]`]
+- .code150[`.code150[]`]
+
+]
+
+
+---
+
+## Font sizes
+
+This is normal sized and coloured text. With a normal size code and output:
+
+```{r}
+rnorm(2)
+```
+
+.blue[.small[This blue text is in a `.blue[.small[...]]` chunk. Everything is shrunk to 90% including the `inline code` as well as code chunks and their output:
+
+```{r}
+rnorm(2)
+```
+
+]]
+
+---
+
+## Lists, increments and footnotes
+
+.pull-left[
+
+- Unordered lists<sup>1</sup>
+  - can be created using "-"
+  - and they can be nested using 2 or 4 space.fn[2]
+      - deep nested 
+  - original nesting level
+
+]
+
+.pull-right[
+- Ordered list
+  1. one
+  2. two 
+  3. three
+
+]
+
+.footnote[
+[1] Footnotes are not automatic.  In the text use `<sup>1</sup>` or `.fn[1]`
+
+[2] At the end of the slide `.footnote[[1] Text associated with footnote 1.]`
+]
+
+
+
+---
+
+## Icons and emoji 
+
+- Install the following packages in R to enable the use of emoji and icons
+
+```
+devtools::install_github("hadley/emo")
+remotes::install_github("mitchelloharawild/icons")
+```
+
+- For more info see https://github.com/mitchelloharawild/icons and https://github.com/hadley/emo for more info
+
+---
+
+## Highlight boxes
+
+
+- You can highlights words using content boxes
+  1. .content-box-a1[`.content-box-a1[]`]     
+  2. .content-box-a3[`.content-box-a3[]`]
+  3. .content-box-a2[`.content-box-a2[]`]
+  4. .content-box-a4[`.content-box-a4[]`]
+
+- The UT theme included four content boxes created using the official accent colours
+
+---
+
+## Quotes 
+
+.small[
+We can include **block quotes** using<br>
+`<blockquote>Quote goes here</blockquote>` 
+
+or<br>
+`> Quote goes here`
+
+or `.blockquote[Quote here]`
+]
+.pull-left[
+
+<blockquote>
+Statistics is the grammar of science. 
+.right[-- <cite>Karl Pearson</cite>]
+</blockquote>
+
+.blockquote[Quote]
+
+> Quote quote  
+]
+
+
+
+.pull-right[.small[
+```
+<blockquote>
+Statistics is the grammar of science. 
+.right[-- <cite>Karl Pearson</cite>]
+</blockquote>
+
+
+
+.blockquote[Quote]
+
+
+
+> Quote quote
+```
+
+]]
+
+---
+
+# About Me
+
+- **Kuan Liu, PhD(c)**, _University of Toronto_
+    + Twitter [@KuanLiu2](https://twitter.com/KuanLiu2)
+    + GitHub [@Kuan-Liu](https://github.com/Kuan-Liu)
+    + Email **kuan.liu[at]mail.utoronto.ca**
+    + Personal website **https://www.kuan-liu.com/**
+    
+- You can find this template at **https://github.com/Kuan-Liu/xaringan_utoronto**
+
+- and a "permanent link" to the slides at
+
+- Credit: This template and tutorial is created based on [Garth Tarr](https://github.com/garthtarr/sydney_xaringan/blob/master/index.Rmd) and [Anna Krystalli](https://annakrystalli.me/talks/xaringan/xaringan.html#1)'s work.
+
+
+---
+
+background-image: url(https://brand.utoronto.ca/wp-content/uploads/virtual-meeting-background-thumb1.jpg)
+background-position: 50% 75%
+background-size: 80% 75%
+
+## Have fun with Xaringan!
+
+
+
