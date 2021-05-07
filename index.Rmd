@@ -723,7 +723,7 @@ Statistics is the grammar of science.
     
 - You can find this template at **https://github.com/Kuan-Liu/xaringan_utoronto**
 
-- and a "permanent link" to the slides at
+- and a "permanent link" to the slides at https://ut-xaringan.kuan-liu.com/#1
 
 - Credit: This template and tutorial is created based on [Garth Tarr](https://github.com/garthtarr/sydney_xaringan/blob/master/index.Rmd) and [Anna Krystalli](https://annakrystalli.me/talks/xaringan/xaringan.html#1)'s work.
 
